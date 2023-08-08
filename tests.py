@@ -13,12 +13,12 @@ class AdditionTest(unittest.TestCase):
             with self.assertRaises(ValueError) as m:
                 add('I', bad_input)
                 if not hasattr(m, 'exception'):
-                    self.fail('%s as augend did not raise exception' % bad_input)
+                    self.fail(f'{bad_input} as augend did not raise exception')
 
             with self.assertRaises(ValueError) as m:
                 add(bad_input, 'I')
                 if not hasattr(m, 'exception'):
-                    self.fail('%s as addend did not raise exception' % bad_input)
+                    self.fail(f'{bad_input} as addend did not raise exception')
 
     def test_IV_and_V(self):
         self.assertEqual(add('II', 'II'), 'IV')
